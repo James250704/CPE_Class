@@ -12,9 +12,9 @@ void func(int num1, int num2) {
 
         if (sum >= 10) {
             count++;
-            carry = 1; 
+            carry = 1;
         } else {
-            carry = 0; 
+            carry = 0;
         }
 
         num1 /= 10;
