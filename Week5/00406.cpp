@@ -1,11 +1,11 @@
 #include <iostream>
-#include <vector>
 #include <string>
+#include <vector>
 
 using namespace std;
 
-bool isPrime(int n) {
-    if (n <= 1) { 
+bool isPrime (int n) {
+    if (n <= 1) {
         return false;
     }
     for (int i = 2; i * i <= n; i++) {
@@ -16,46 +16,50 @@ bool isPrime(int n) {
     return true;
 }
 
-string func(const vector<int>& arr, int b) {
-    string result = "";
-    int total_primes = arr.size();
-    int count;
+string func (const vector<int> &arr, int b) {
+    string result;
+    int size = arr.size ();
 
-    if (total_primes % 2 == 0) {
-        count = b * 2;
+    if (size % 2 == 0) {
+        b = b * 2;
     } else {
-        count = b * 2 - 1;
+        b = b * 2 - 1;
     }
 
-    if (count > total_primes) {
-        for (int prime : arr) {
-            result += to_string(prime) + " ";
+    if (b > size) {
+        for (int i : arr) {
+            result += to_string (i) + " ";
         }
     } else {
-        int start_index = (total_primes - count) / 2;
-        int end_index = start_index + count;
-        
-        if (start_index < 0) start_index = 0;
-        if (end_index > total_primes) end_index = total_primes;
+        int min = (size - b) / 2;
+        int max = min + b;
 
-        for (int i = start_index; i < end_index; i++) {
-            result += to_string(arr[i]) + " ";
+        if (min < 0) {
+            min = 0;
+        }
+        if (max > size) {
+            max = size;
+        }
+
+        for (int i = min; i < max; i++) {
+            result += to_string (arr[i]) + " ";
         }
     }
     return result;
 }
 
-int main() {
+int main () {
     int a, b;
     while (cin >> a >> b) {
         vector<int> arr;
+        arr.push_back (1);
         for (int i = 1; i <= a; i++) {
-            if (isPrime(i)) {
-                arr.push_back(i);
+            if (isPrime (i)) {
+                arr.push_back (i);
             }
         }
-        
-        cout << a << " " << b << ": " << func(arr, b) << endl;
+
+        cout << a << " " << b << ": " << func (arr, b) << endl;
     }
 
     return 0;
