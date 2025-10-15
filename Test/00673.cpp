@@ -4,40 +4,40 @@
 
 using namespace std;
 
-bool func (string str) {
+bool func(string str) {
     stack<char> s;
-    for (char c : str) {
-        if (c == '(' || c == '[' || c == '{') {
-            s.push (c);
-        } else if (c == ')') {
-            if (s.empty () || s.top () != '(') {
+    for(char c : str) {
+        if(c == '(' || c == '[' || c == '{') {
+            s.push(c);
+        } else if(c == ')') {
+            if(s.empty() || s.top() != '(') {
                 return false;
             }
-            s.pop ();
-        } else if (c == ']') {
-            if (s.empty () || s.top () != '[') {
+            s.pop();
+        } else if(c == ']') {
+            if(s.empty() || s.top() != '[') {
                 return false;
             }
-            s.pop ();
-        } else if (c == '}') {
-            if (s.empty () || s.top () != '{') {
+            s.pop();
+        } else if(c == '}') {
+            if(s.empty() || s.top() != '{') {
                 return false;
             }
-            s.pop ();
+            s.pop();
         }
     }
-    return s.empty ();
+    return s.empty();
 }
 
-int main () {
+int main() {
     int n;
     cin >> n;
-    cin.ignore ();
+    cin.ignore();
 
-    while (n--) {
+    while(n--) {
         string str;
-        getline (cin, str);
-        if (func (str)) {
+        getline(cin, str);
+        if(func(str)) {
             cout << "Yes" << endl;
         } else {
             cout << "No" << endl;

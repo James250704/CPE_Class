@@ -6,17 +6,17 @@
 using namespace std;
 
 void func(vector<int> &arr) {
-    for (int i = 0; i < arr.size(); i++) {
+    for(int i = 0; i < arr.size(); i++) {
         int sum = 0;
-        for (int j = 1; j <= arr[i] / 2; j++) {
-            if (arr[i] % j == 0) {
+        for(int j = 1; j <= arr[i] / 2; j++) {
+            if(arr[i] % j == 0) {
                 sum += j;
             }
         }
         string status;
-        if (sum == arr[i]) {
+        if(sum == arr[i]) {
             status = "PERFECT";
-        } else if (sum < arr[i]) {
+        } else if(sum < arr[i]) {
             status = "DEFICIENT";
         } else {
             status = "ABUNDANT";
@@ -28,8 +28,8 @@ void func(vector<int> &arr) {
 int main() {
     vector<int> arr;
     int temp;
-    while (cin >> temp) {
-        if (temp == 0) {
+    while(cin >> temp) {
+        if(temp == 0) {
             break;
         }
         arr.push_back(temp);

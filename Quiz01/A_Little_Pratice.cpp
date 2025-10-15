@@ -2,15 +2,15 @@
 
 using namespace std;
 
-int main(){
+int main() {
     int n;
-    while(cin >> n){
-        if(n == 0){
+    while(cin >> n) {
+        if(n == 0) {
             break;
         }
-        if (n > 0){
+        if(n > 0) {
             cout << "positive" << endl;
-        }else{
+        } else {
             cout << "negative" << endl;
         }
     }

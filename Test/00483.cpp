@@ -5,15 +5,15 @@
 
 using namespace std;
 
-int main () {
+int main() {
     string line;
-    while (getline (cin, line)) {
-        stringstream ss (line);
+    while(getline(cin, line)) {
+        stringstream ss(line);
         string reverse_line;
         string word;
 
-        while (ss >> word) {
-            reverse (word.begin (), word.end ());
+        while(ss >> word) {
+            reverse(word.begin(), word.end());
             reverse_line += word + " ";
         }
         cout << reverse_line << endl;

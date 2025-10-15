@@ -3,9 +3,9 @@ using namespace std;
 
 int func(int a, int b, int c, int d, int L) {
     int count = 0;
-    for (int x = 0; x <= L; x++) {
+    for(int x = 0; x <= L; x++) {
         int fx = a * x * x + b * x + c;
-        if (fx % d == 0) {
+        if(fx % d == 0) {
             count++;
         }
     }
@@ -13,10 +13,10 @@ int func(int a, int b, int c, int d, int L) {
 }
 
 int main() {
-    while (1) {
+    while(1) {
         int a, b, c, d, L;
         cin >> a >> b >> c >> d >> L;
-        if (a == 0 && b == 0 && c == 0 && d == 0 && L == 0) {
+        if(a == 0 && b == 0 && c == 0 && d == 0 && L == 0) {
             return 0;
         }
         cout << func(a, b, c, d, L) << endl;

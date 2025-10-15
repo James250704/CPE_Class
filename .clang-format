@@ -3,5 +3,8 @@ IndentWidth: 4
 TabWidth: 4
 UseTab: Never
 BreakBeforeBraces: Attach
-PointerAlignment: Left
+PointerAlignment: Right
 SpaceBeforeParens: Never
+AllowAllParametersOfDeclarationOnNextLine: false
+BinPackParameters: true
+ColumnLimit: 0
