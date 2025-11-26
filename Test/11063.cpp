@@ -53,6 +53,7 @@ int main() {
             cout << "Case #" << count << ": It is not a B2-Sequence." << endl;
         }
         count++;
+        cout << endl;
     }
 
     return 0;
