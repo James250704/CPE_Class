@@ -24,7 +24,7 @@ bool func(string a) {
     }
 
     int temp = abs(oddtemp - eventemp);
-    
+
     if(temp % 11 == 0) {
         return true;
     } else {
