@@ -26,9 +26,7 @@ int main() {
         for(int i = a; i <= b; i++) {
             arr.push_back(func(i));
         }
-        sort(arr.begin(), arr.end());
-        reverse(arr.begin(), arr.end());
-        cout << arr[0] << endl;
+        cout << *max_element(arr.begin(), arr.end()) << endl;
     }
 
     return 0;

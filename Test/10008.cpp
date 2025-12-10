@@ -1,33 +1,39 @@
 #include <algorithm>
-#include <cctype>
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
 int main() {
     int n;
     cin >> n;
+    cin.ignore();
 
-    vector<string> arr;
-    vector<string> result(28);
-    string temp;
-    for(int i = 0; i < n; i++) {
-        cin >> temp;
-        arr.push_back(temp);
+    vector<int> freq(26, 0);
+
+    for(int i = 0; i < n; ++i) {
+        string line;
+        getline(cin, line);
+        for(char c : line) {
+            if(isalpha(c)) {
+                freq[toupper(c) - 'A']++;
+            }
+        }
     }
 
-    transform(arr.begin(), arr.end(), arr.begin(), ::toupper);
-
-    for(int i = 0; i < arr.size(); i++) {
-        cout << arr[i] << endl;
+    vector<pair<int, char>> letters;
+    for(int i = 0; i < 26; ++i) {
+        if(freq[i] > 0) {
+            letters.push_back({-freq[i], char('A' + i)});
+        }
     }
-    // for (int j = 0; j < arr.size(); j++) {
-    //     temp = arr[j];
-    //     for (int i = 0; i < temp.length(); i++) {
 
-    //     }
-    // }
+    sort(letters.begin(), letters.end());
+
+    for(auto &p : letters) {
+        cout << p.second << " " << -p.first << endl;
+    }
 
     return 0;
 }
