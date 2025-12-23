@@ -9,7 +9,7 @@ bool customSort(int a, int b) {
     int modA = a % M;
     int modB = b % M;
 
-    if (modA != modB) {
+    if(modA != modB) {
         return modA < modB; // 根據餘數升序排列
     }
 
@@ -17,12 +17,12 @@ bool customSort(int a, int b) {
     bool isOddA = a % 2 != 0;
     bool isOddB = b % 2 != 0;
 
-    if (isOddA != isOddB) {
+    if(isOddA != isOddB) {
         return isOddA; // 奇數優先於偶數
     }
 
     // 規則 3: 如果餘數和奇偶性相同，奇數降序，偶數升序
-    if (isOddA) {
+    if(isOddA) {
         return a > b; // 奇數降序排列
     } else {
         return a < b; // 偶數升序排列
@@ -30,17 +30,17 @@ bool customSort(int a, int b) {
 }
 
 int main() {
-    while (true) {
+    while(true) {
         cin >> N >> M;
 
-        if (N == 0 && M == 0) {
+        if(N == 0 && M == 0) {
             cout << "0 0" << endl;
             break; // 當輸入為 0 0，則結束
         }
 
         vector<int> numbers(N);
 
-        for (int i = 0; i < N; ++i) {
+        for(int i = 0; i < N; ++i) {
             cin >> numbers[i];
         }
 
@@ -49,11 +49,10 @@ int main() {
 
         // 輸出結果
         cout << N << " " << M << endl;
-        for (int num : numbers) {
+        for(int num : numbers) {
             cout << num << endl;
         }
     }
 
     return 0;
 }
-

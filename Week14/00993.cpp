@@ -1,15 +1,15 @@
 #include <cstdio>
-#include <string>
 #include <iostream>
+#include <string>
 
 using namespace std;
 
-string func(int n){
+string func(int n) {
     string result;
     int i;
-    while(n != 1){
-        for(i = 9; i > 1; i--){
-            if(n % i == 0){
+    while(n != 1) {
+        for(i = 9; i > 1; i--) {
+            if(n % i == 0) {
                 n /= i;
                 result = (char)(i + '0') + result;
                 break;
@@ -21,13 +21,13 @@ string func(int n){
     return result;
 }
 
-int main(){
+int main() {
     int Case = 0, n;
     string result;
     cin >> Case;
-    while(Case--){
+    while(Case--) {
         cin >> n;
-        if(n < 10){
+        if(n < 10) {
             cout << n << endl;
             continue;
         }

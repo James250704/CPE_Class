@@ -4,7 +4,7 @@ using namespace std;
 
 int cal(int n) {
     int sum = 0;
-    while (n > 0) {
+    while(n > 0) {
         int digit = n % 10;
         sum += digit * digit;
         n /= 10;
@@ -15,8 +15,8 @@ int cal(int n) {
 string func(int n) {
     set<int> numbers;
 
-    while (n != 1) {
-        if (numbers.count(n)) {
+    while(n != 1) {
+        if(numbers.count(n)) {
             return " is an Unhappy number.";
         }
 
@@ -27,11 +27,11 @@ string func(int n) {
     return " is a Happy number.";
 }
 
-int main(){
+int main() {
     int n;
     cin >> n;
     int count = 1;
-    while(n--){
+    while(n--) {
         int temp;
         cin >> temp;
         cout << "Case #" << count++ << ": " << temp << func(temp) << endl;
